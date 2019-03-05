@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SANDRA GLENNS</title>
+	<title>SANDRA GLENNZ</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Sandra Glenns">
