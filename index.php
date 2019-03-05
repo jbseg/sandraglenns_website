@@ -13,6 +13,33 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 </head>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -24,7 +51,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <nav class="sidebar w3-animate-left" id="mySidebar"><br>
   <h3 class="sidebar-title"><b>SANDRA<br>GLENNS</b></h3>
 
-  <a href="#" onclick="Close()" class="w3-bar-item w3-button">PORTFOLIO</a> 
+  <a href="#main" onclick="Close()" class="w3-bar-item w3-button">PORTFOLIO</a> 
   <a href="#about" onclick="Close()" class="w3-bar-item w3-button">ABOUT ME</a> 
   <a href="#contact" onclick="Close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
@@ -39,7 +66,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="Close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main">
+<div id="main" class="w3-main">
 
   <!-- Push down content on small screens --> 
   <div class="w3-hide-large" style="margin-top:83px"></div>
@@ -73,6 +100,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <a id="2" class="page-number" onclick="page_two()">2</a>
       <a id="3" class="page-number" onclick="page_three()">3</a>
       <a id="4" class="page-number" onclick="page_four()">4</a>
+      <a id="5" class="page-number" onclick="page_five()">5</a>
       <a href="#" class="page-number" onclick="next()">»</a>
     </div>
   </div>
@@ -177,24 +205,24 @@ function onClick(element, s) {
 }
 function page_one(){
   
-  document.getElementById("img1").src = "./img/fall_georgian_bay.jpeg";
-  document.getElementById("img1").alt = "Fall Georgian Bay | Acrylic on canvas | 1250";
+  document.getElementById("img1").src = "./img/fall_georgian_bay.jpg";
+  document.getElementById("img1").alt = "Fall Georgian Bay | Acrylic on canvas | 24 x 36 | 1250";
   document.getElementById("img2").src = "./img/clear.jpg";
-  document.getElementById("img2").alt = "Clear | Acrylic on canvas | 750";
+  document.getElementById("img2").alt = "Clear | Acrylic on canvas | 18 x 14 | 750";
   document.getElementById("img3").src = "./img/in_deep_thought.jpg";
-  document.getElementById("img3").alt = "In Deep Thought | Oil on canvas | 750";
+  document.getElementById("img3").alt = "In Deep Thought | Oil on canvas | 16 x 12 | 750";
   document.getElementById("img4").src = "./img/elizabeth_taylor_with_emerald.jpg";
-  document.getElementById("img4").alt = "Elizabeth Taylor With Emerald | Oil on canvas | 1250";
+  document.getElementById("img4").alt = "Elizabeth Taylor With Emerald | Oil on canvas | 16 x 12 | 1250";
   document.getElementById("img5").src = "./img/antique_dress.jpg";
-  document.getElementById("img5").alt = "Antique Dress | Oil on canvas | 1500";
+  document.getElementById("img5").alt = "Antique Dress | Oil on canvas | 24 x 18 | 1500";
   document.getElementById("img6").src = "./img/blue_tattoos.jpg";
-  document.getElementById("img6").alt = "Blue Tattoos | Oil on canvas | 1250";
+  document.getElementById("img6").alt = "Blue Tattoos | Oil on canvas | 28 x 22 | 1250";
   document.getElementById("img7").src = "./img/st._urbain.jpg";
-  document.getElementById("img7").alt = "St. Urbain Street | Acrylic on canvas | 950";
+  document.getElementById("img7").alt = "St. Urbain Street | Acrylic on canvas | 22 x 28 | 950";
   document.getElementById("img8").src = "./img/two_girls.jpg";
-  document.getElementById("img8").alt = "Two Girls | Acrylic on canvas | 1250";
+  document.getElementById("img8").alt = "Two Girls | Acrylic on canvas | 28 x 22 | 1250";
   document.getElementById("img9").src = "./img/daylight.jpg";
-  document.getElementById("img9").alt = "Daylight | Oil on canva | 1500";
+  document.getElementById("img9").alt = "Daylight | Oil on canva | 24 x 20 | 1500";
 
   document.getElementById(current_page_no + "").className = "page-number";
   document.getElementById("1").className = "page-number-highlighted";
@@ -204,23 +232,23 @@ page_one();
 function page_two(){
   //load the new photos
   document.getElementById("img1").src = "./img/l'esteral.jpg";
-  document.getElementById("img1").alt = "L'Esteral | Acrylic on Canvas | 1250";
+  document.getElementById("img1").alt = "L'Estéral Québec | Acrylic on Canvas | 18 x 24 | 1250";
   document.getElementById("img2").src = "./img/love.jpg";
-  document.getElementById("img2").alt = "Love | Acrylic on Canvas | 950";
+  document.getElementById("img2").alt = "Love | Acrylic on Canvas | 18 x 24 | 950";
   document.getElementById("img3").src = "./img/girl_in_green.jpg";
-  document.getElementById("img3").alt = "Girl In Green | Oil on Canvas | 750";
+  document.getElementById("img3").alt = "Girl In Green | Oil on Canvas | 18 x 14 | 750";
   document.getElementById("img4").src = "./img/serenity.jpg";
-  document.getElementById("img4").alt = "Serenity | Oil on Canvas | 1500";
+  document.getElementById("img4").alt = "Serenity | Oil on Canvas | 30 x 24 | 1500";
   document.getElementById("img5").src = "./img/cheetah.jpg";
-  document.getElementById("img5").alt = "Cheetah | Oil on Canvas | 1500";
+  document.getElementById("img5").alt = "Cheetah | Oil on Canvas | 18 x 24 | 1500";
   document.getElementById("img6").src = "./img/winter_in_toronto.jpg";
-  document.getElementById("img6").alt = "Winter In Toronto | Acrylic on Canvas | 950";
+  document.getElementById("img6").alt = "Winter In Toronto | Acrylic on Canvas | 24 x 30 | 950";
   document.getElementById("img7").src = "./img/st._urbain_II.jpg";
-  document.getElementById("img7").alt = "St. Urbain Street II | Acrylic on Canvas | 1250";
+  document.getElementById("img7").alt = "St. Urbain Street II | Acrylic on Canvas | 24 x 36 | 1250";
   document.getElementById("img8").src = "./img/mount_dena.jpg";
-  document.getElementById("img8").alt = "Mount Dena | Oil on Canvas | SOLD";
+  document.getElementById("img8").alt = "Mount Dena | Oil on Canvas | 24 x 20 | SOLD";
   document.getElementById("img9").src = "./img/orange_lillies.jpg";
-  document.getElementById("img9").alt = "Orange Lillies | Oil on Canvas | 1500";
+  document.getElementById("img9").alt = "Orange Lillies | Oil on Canvas | 24 x 20 | 1500";
 
   document.getElementById(current_page_no + "").className = "page-number";
   document.getElementById("2").className = "page-number-highlighted";
@@ -229,23 +257,23 @@ function page_two(){
 
 function page_three(){
   document.getElementById("img1").src = "./img/fancy_gown.jpg";
-  document.getElementById("img1").alt = "Fancy Gown | Acrylic on Canvas | 1500";
+  document.getElementById("img1").alt = "Fancy Gown | Acrylic on Canvas | 30 x 24 | 1500";
   document.getElementById("img2").src = "./img/spanish_lady.jpg";
-  document.getElementById("img2").alt = "Spanish Lady | Acrylic on Canvas | 950";
+  document.getElementById("img2").alt = "Spanish Lady | Acrylic on Canvas | 20 x 24 | 950";
   document.getElementById("img3").src = "./img/white_scarf.jpg";
-  document.getElementById("img3").alt = "White Scarf | Oil on Canvas | 950";
-  document.getElementById("img4").src = "./img/pasture.jpg";
-  document.getElementById("img4").alt = "Pasture | Acrylic on Canvas | 1950";
+  document.getElementById("img3").alt = "White Scarf | Oil on Canvas | 20 x 16 | 950";
+  document.getElementById("img4").src = "./img/cantons-de-lest.jpg";
+  document.getElementById("img4").alt = "Cantons-de-l'Est Québec | Acrylic on Canvas | 30 x 40 | 1950";
   document.getElementById("img5").src = "./img/fleur_de_noel.jpg";
-  document.getElementById("img5").alt = "Fleur de Noel | Oil on Canvas | 950";
+  document.getElementById("img5").alt = "Fleur de Noël | Oil on Canvas | 20 x 16 | 950";
   document.getElementById("img6").src = "./img/thorned_rose.jpg";
-  document.getElementById("img6").alt = "Thorned Rose | Acrylic on Canvas | 1500";
+  document.getElementById("img6").alt = "Thorned Rose | Acrylic on Canvas | 24 x 20 | 1500";
   document.getElementById("img7").src = "./img/young_asian.jpg";
-  document.getElementById("img7").alt = "Young Asian | Oil on Canvas | 1500";
+  document.getElementById("img7").alt = "Young Asian | Oil on Canvas | 18 x 14 | 1500";
   document.getElementById("img8").src = "./img/ready_to_serve.jpg";
-  document.getElementById("img8").alt = "Ready to Serve | Oil on Canvas | 650";
+  document.getElementById("img8").alt = "Ready to Serve | Oil on Canvas | 16 x 20 | 650";
   document.getElementById("img9").src = "./img/blue_lady.jpg";
-  document.getElementById("img9").alt = "Blue Lady | Oil on Canvas | 950";
+  document.getElementById("img9").alt = "Blue Lady | Oil on Canvas | 20 x 16 | 950";
 
   document.getElementById(current_page_no + "").className = "page-number";
   document.getElementById("3").className = "page-number-highlighted";
@@ -253,22 +281,46 @@ function page_three(){
 }
 function page_four(){
   document.getElementById("img1").src = "./img/focus.jpg";
-  document.getElementById("img1").alt = "Focus | Acrylic on Canvas | 950";
+  document.getElementById("img1").alt = "Focus | Acrylic on Canvas | 20 x 16 | 950";
   document.getElementById("img2").src = "./img/gray_rap.jpg";
-  document.getElementById("img2").alt = "Gray Rap | Oil on Canvas | 950";
+  document.getElementById("img2").alt = "Gray Rap | Oil on Canvas | 20 x 16 | 950";
   document.getElementById("img3").src = "./img/blue_drapes.jpg";
-  document.getElementById("img3").alt = "Blue Drapes | Oil on Canvas | 650";
+  document.getElementById("img3").alt = "Blue Drapes | Oil on Canvas | 14 x 18 | 650";
   document.getElementById("img4").src = "./img/trans_lady.jpg";
-  document.getElementById("img4").alt = "Trans Lady | Acrylic on Canvas | 750";
+  document.getElementById("img4").alt = "Trans Lady | Acrylic on Canvas | 20 x 16 | 750";
   document.getElementById("img5").src = "./img/merylin_monroe.jpg";
-  document.getElementById("img5").alt = "Marylin Monroe | Oil on Canvas | 1950";
-  document.getElementById("img6").src = "./img/boquet_of_roses.jpg";
-  document.getElementById("img6").alt = "Boquet of Roses | Oil on Canvas | 1250";
+  document.getElementById("img5").alt = "Marylin Monroe | Oil on Canvas | 20 x 16 | 1950";
+  document.getElementById("img6").src = "./img/bouquet_of_roses.jpg";
+  document.getElementById("img6").alt = "Bouquet of Roses | Oil on Canvas | 20 x 16 | 1250";
   document.getElementById("img7").src = "./img/christmas_day.jpg";
-  document.getElementById("img7").alt = "Christmas Day | Acrylic on Canvas | 1500";
+  document.getElementById("img7").alt = "Christmas Day | Acrylic on Canvas | 24 x 36 | 1500";
+  document.getElementById("img8").src = "./img/jeremy_in_green.jpg";
+  document.getElementById("img8").alt = "Jeremy in Green | Oil on Canvas | 16 x 12 | 550";
+  document.getElementById("img9").src = "./img/red_rose_dress.jpg";
+  document.getElementById("img9").alt = "Red Rose Dress | Acrylic on Canvas | 24 x 18 | 750";
+
   document.getElementById(current_page_no + "").className = "page-number";
   document.getElementById("4").className = "page-number-highlighted";
   current_page_no = 4;
+}
+function page_five(){
+  document.getElementById("img1").src = "./img/blue_eyed_girl_with_jacket.jpg";
+  document.getElementById("img1").alt = "Blue Eyed Girl with Jacket | Oil on Canvas | 20 x 16 | 850";
+  document.getElementById("img2").src = "./img/mt_damavand.jpg";
+  document.getElementById("img2").alt = "Mount Damavand | Oil on Canvas | 16 x 20 | SOLD";
+  document.getElementById("img3").src = "./img/girl_with_gold_necklace.jpg";
+  document.getElementById("img3").alt = "Girl with Gold Necklace | Oil on Canvas | 20 x 16 | 850";
+  document.getElementById("img4").src = "./img/queen_in_red.jpg";
+  document.getElementById("img4").alt = "Queen in Red | Oil on Canvas | 16 x 12 | 950";
+  document.getElementById("img5").src = "./img/merylin_monroe.jpg";
+  document.getElementById("img5").alt = "Marylin Monroe | Oil on Canvas | 20 x 16 | 1950";
+  document.getElementById("img6").src = "./img/bouquet_of_roses.jpg";
+  document.getElementById("img6").alt = "Bouquet of Roses | Oil on Canvas | 20 x 16 | 1250";
+  document.getElementById("img7").src = "./img/christmas_day.jpg";
+  document.getElementById("img7").alt = "Christmas Day | Acrylic on Canvas | 24 x 36 | 1500";
+  document.getElementById(current_page_no + "").className = "page-number";
+  document.getElementById("5").className = "page-number-highlighted";
+  current_page_no = 5;
 }
 function next(){
   switch(current_page_no){
@@ -282,6 +334,9 @@ function next(){
         page_four();
         break;
     case 4:
+        page_five();
+        break;
+    case 5:
         page_one();
         break;
     default:
@@ -291,7 +346,7 @@ function next(){
 function back(){
   switch(current_page_no){
    case 1:
-        page_four();
+        page_five();
         break;
     case 2:
         page_one();
@@ -302,6 +357,9 @@ function back(){
     case 4:
         page_three();
         break;
+    case 5:
+    	page_four();
+    	break;
     default:
         alert("Something went wrong in the back switch");
   }
