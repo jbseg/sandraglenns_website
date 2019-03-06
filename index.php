@@ -49,7 +49,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Sidebar/menu -->
 <nav class="sidebar w3-animate-left" id="mySidebar"><br>
-  <h3 class="sidebar-title"><b>SANDRA<br>GLENNZ</b></h3>
+  <h3 class="sidebar-title"><b>SANDRA<br>GLENNS</b></h3>
 
   <a href="#main" onclick="Close()" class="w3-bar-item w3-button">PORTFOLIO</a> 
   <a href="#about" onclick="Close()" class="w3-bar-item w3-button">ABOUT ME</a> 
